@@ -12,7 +12,9 @@ function ContextProvider(props) {
       .then(res => res.json())
       .then(data => setAllPhotos(data));
   }, []);
-  return <Context.Provider value="">{props.children}</Context.Provider>;
+  return (
+    <Context.Provider value={{ allPhotos }}>{props.children}</Context.Provider>
+  );
 }
 
 export { Context, ContextProvider };
