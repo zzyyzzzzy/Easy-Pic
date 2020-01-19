@@ -6,7 +6,9 @@ function Image({ className, img }) {
   const { toggleFavorite } = useContext(Context);
   const heartIcon = hovered && (
     <i
-      className="ri-heart-line favorite"
+      className={
+        img.isFavorite ? "ri-heart-fill favorite" : "ri-heart-line favorite"
+      }
       onClick={() => toggleFavorite(img.id)}
     ></i>
   );
