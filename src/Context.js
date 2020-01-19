@@ -12,8 +12,24 @@ function ContextProvider(props) {
       .then(res => res.json())
       .then(data => setAllPhotos(data));
   }, []);
+
+  function toggleFavorite(id) {
+    const newPhotos = allPhotos.map(img => {
+      if (img.id === id) {
+        return {
+          ...img,
+          isFavorite: !img.isFavorite
+        };
+      }
+      return img;
+    });
+
+    setAllPhotos(newPhotos);
+  }
   return (
-    <Context.Provider value={{ allPhotos }}>{props.children}</Context.Provider>
+    <Context.Provider value={{ allPhotos, toggleFavorite }}>
+      {props.children}
+    </Context.Provider>
   );
 }
 
