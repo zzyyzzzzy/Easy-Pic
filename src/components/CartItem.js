@@ -1,12 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../Context";
+import PropTypes from "prop-types";
 
 function CartItem({ item }) {
   const { removeFromCart } = useContext(Context);
+  const [hovered, setHovered] = useState(false);
+
   return (
     <div className="cart-item">
       <i
-        className="ri-delete-bin-line"
+        className={hovered ? "ri-delete-bin-fill" : "ri-delete-bin-line"}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
         onClick={() => removeFromCart(item.id)}
       ></i>
       <img src={item.url} width="130px" />
@@ -15,4 +20,9 @@ function CartItem({ item }) {
   );
 }
 
+CartItem.propTypes = {
+  item: PropTypes.shape({
+    url: PropTypes.string.isRequired
+  })
+};
 export default CartItem;

@@ -28,7 +28,11 @@ function Cart() {
         {total.toLocaleString("en-US", { style: "currency", currency: "USD" })}
       </p>
       <div className="order-button">
-        <button onClick={palceOrder}>{buttonText}</button>
+        {cartItems.length ? (
+          <button onClick={palceOrder}>{buttonText}</button>
+        ) : (
+          <p>No Items In the Cart...</p>
+        )}
       </div>
     </main>
   );
