@@ -27,20 +27,20 @@ function Image({ className, img }) {
   );
   return (
     <div className={`${className} image-container`} ref={ref}>
-      <img src={img.url} className="image-grid" alt="beautiful image" />
+      <img src={img.urls.thumb} className="image-grid" alt="beautiful image" />
       {heartIcon}
       {cartIcon}
     </div>
   );
 }
 
-Image.propTypes = {
-  className: PropTypes.string,
-  img: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-    isFavorite: PropTypes.bool
-  })
-};
+// Image.propTypes = {
+//   className: PropTypes.string,
+//   img: PropTypes.shape({
+//     id: PropTypes.string.isRequired,
+//     url: PropTypes.string.isRequired,
+//     isFavorite: PropTypes.bool
+//   })
+// };
 
 export default Image;

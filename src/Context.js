@@ -5,8 +5,8 @@ const Context = React.createContext();
 function ContextProvider(props) {
   const [allPhotos, setAllPhotos] = useState([]);
   const [cartItems, setCartItems] = useState([]);
-  const url =
-    "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json";
+  const API_KEY = process.env.REACT_APP_EASY_PIC_API_KEY;
+  const url = "https://api.unsplash.com/photos?client_id=" + API_KEY;
 
   useEffect(() => {
     fetch(url)
