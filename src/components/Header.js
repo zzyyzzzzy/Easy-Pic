@@ -19,16 +19,19 @@ function Header() {
   return (
     <header>
       <h2>
-        <Link to="/">Pic Some</Link>
+        <Link to="/">Easy Pic</Link>
       </h2>
       <form onSubmit={handleOnSubmit}>
         <input
           type="text"
           placeholder="Search..."
+          className="searchTerm"
           onChange={handleOnChange}
           value={searchTerm}
         />
-        <button>search</button>
+        <button type="submit" className="searchButton">
+          <i class="ri-search-line"></i>
+        </button>
       </form>
       <Link to="/cart">
         <i className={`${cartClassName} ri-fw ri-2x`}></i>
