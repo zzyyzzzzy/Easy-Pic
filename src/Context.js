@@ -6,13 +6,24 @@ function ContextProvider(props) {
   const [allPhotos, setAllPhotos] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const API_KEY = process.env.REACT_APP_EASY_PIC_API_KEY;
-  const url = "https://api.unsplash.com/photos?client_id=" + API_KEY;
+  const baseUrl = "https://api.unsplash.com/";
+  const defaultUrl = baseUrl + "photos?client_id=" + API_KEY;
 
-  useEffect(() => {
+  const fetchData = url => {
     fetch(url)
       .then(res => res.json())
       .then(data => setAllPhotos(data));
+  };
+
+  useEffect(() => {
+    fetchData(defaultUrl);
   }, []);
+
+  const searchImages = searchTerm => {
+    const searchUrl =
+      baseUrl + "search/photos?query=" + searchTerm + "client_id=" + API_KEY;
+    fetchData(searchUrl);
+  };
 
   const toggleFavorite = id => {
     const newPhotos = allPhotos.map(img => {

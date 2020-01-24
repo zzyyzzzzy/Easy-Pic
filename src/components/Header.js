@@ -11,6 +11,10 @@ function Header() {
       <h2>
         <Link to="/">Pic Some</Link>
       </h2>
+      <form>
+        <input type="text" placeholder="Search..." />
+        <button>search</button>
+      </form>
       <Link to="/cart">
         <i className={`${cartClassName} ri-fw ri-2x`}></i>
       </Link>
