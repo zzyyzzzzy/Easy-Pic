@@ -135,19 +135,24 @@ header h2 {
 }
 
 header form {
-  width: 15%;
+  width: 12%;
 }
 
 .searchTerm {
   border-radius: 5px 0 0 5px;
+  border: 1px solid #777;
   border-right: none;
-  height: 20px;
+  height: 28px;
   width: 75%;
+  outline: none;
 }
 
 .searchButton {
-  height: 26px;
+  height: 32px;
   border-radius: 0 5px 5px 0;
+  border: 1px solid #777;
+  border-left: none;
+  outline: none;
 }
 
 a {

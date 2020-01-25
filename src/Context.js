@@ -20,8 +20,10 @@ function ContextProvider(props) {
   }, []);
 
   const searchImages = searchTerm => {
-    const searchUrl = `${baseUrl}search/photos?query=${searchTerm}&per_page=30&client_id=${API_KEY}`;
-    fetchData(searchUrl, true);
+    if (searchTerm !== "") {
+      const searchUrl = `${baseUrl}search/photos?query=${searchTerm}&per_page=30&client_id=${API_KEY}`;
+      fetchData(searchUrl, true);
+    }
   };
 
   const toggleFavorite = id => {
