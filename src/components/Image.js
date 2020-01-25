@@ -8,14 +8,27 @@ function Image({ className, img }) {
   const { toggleFavorite, addToCart, cartItems, removeFromCart } = useContext(
     Context
   );
-  const heartIcon = hovered && (
-    <i
-      className={
-        img.isFavorite ? "ri-heart-fill favorite" : "ri-heart-line favorite"
-      }
-      onClick={() => toggleFavorite(img.id)}
-    ></i>
-  );
+
+  const renderHeartIcon = () => {
+    if (hovered) {
+      return (
+        <i
+          className={
+            img.isFavorite ? "ri-heart-fill favorite" : "ri-heart-line favorite"
+          }
+          onClick={() => toggleFavorite(img.id)}
+        ></i>
+      );
+    } else if (img.isFavorite) {
+      return (
+        <i
+          className={"ri-heart-fill favorite"}
+          onClick={() => toggleFavorite(img.id)}
+        ></i>
+      );
+    }
+  };
+
   const isInCart = cartItems.some(item => item.id === img.id);
   const cartIcon = hovered && (
     <i
@@ -28,7 +41,7 @@ function Image({ className, img }) {
   return (
     <div className={`${className} image-container`} ref={ref}>
       <img src={img.urls.thumb} className="image-grid" alt="beautiful image" />
-      {heartIcon}
+      {renderHeartIcon()}
       {cartIcon}
     </div>
   );
