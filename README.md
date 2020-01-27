@@ -1,2 +1,2 @@
 ### Pic Some app
-An react application
+An react application that allows a user to search his/her favorite picture
