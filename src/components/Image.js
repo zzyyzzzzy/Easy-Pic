@@ -40,7 +40,7 @@ function Image({ className, img }) {
   );
   return (
     <div className={`${className} image-container`} ref={ref}>
-      <img src={img.urls.thumb} className="image-grid" alt="beautiful image" />
+      <img src={img.urls.small} className="image-grid" alt="beautiful image" />
       {renderHeartIcon()}
       {cartIcon}
     </div>
