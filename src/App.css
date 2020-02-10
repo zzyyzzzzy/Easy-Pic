@@ -85,7 +85,13 @@ img.image-grid {
   left: 5px;
   cursor: pointer;
 }
-
+.download {
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: white;
+}
 .ri-heart-fill {
   opacity: 0.7;
 }

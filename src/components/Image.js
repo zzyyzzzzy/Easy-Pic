@@ -11,6 +11,7 @@ function Image({ className, img }) {
 
   const renderHeartIcon = () => {
     if (hovered) {
+      console.log(img.links);
       return (
         <i
           className={
@@ -38,11 +39,19 @@ function Image({ className, img }) {
       onClick={isInCart ? () => removeFromCart(img.id) : () => addToCart(img)}
     ></i>
   );
+  const downloadIcon = hovered && (
+    <a href={`${img.links.download}?force=true`} download>
+      <i className="ri-download-line download"></i>
+    </a>
+  );
+
   return (
     <div className={`${className} image-container`} ref={ref}>
       <img src={img.urls.small} className="image-grid" alt="beautiful image" />
       {renderHeartIcon()}
       {cartIcon}
+
+      {downloadIcon}
     </div>
   );
 }
