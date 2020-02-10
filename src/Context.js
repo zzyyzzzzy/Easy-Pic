@@ -14,7 +14,7 @@ function ContextProvider(props) {
       .then(res => res.json())
       .then(data => setAllPhotos(search ? data.results : data));
   };
-  console.log(allPhotos);
+
   useEffect(() => {
     fetchData(defaultUrl);
   }, []);
