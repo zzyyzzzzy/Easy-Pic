@@ -11,7 +11,7 @@ function Image({ className, img }) {
 
   const renderHeartIcon = () => {
     if (hovered) {
-      console.log(img.links);
+      
       return (
         <i
           className={
