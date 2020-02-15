@@ -1,11 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { Context } from "../Context";
 import PropTypes from "prop-types";
 import useHover from "../hooks/useHover";
 
-function CartItem({ item }) {
+function CartItem({ item, downloadRefs, i }) {
   const { removeFromCart } = useContext(Context);
   const [hovered, ref] = useHover();
+  const download = useRef(null);
 
   return (
     <div className="cart-item">
@@ -15,7 +16,13 @@ function CartItem({ item }) {
         onClick={() => removeFromCart(item.id)}
       ></i>
       <img src={item.urls.thumb} width="130px" />
-      <p>$5.99</p>
+      <a
+        ref={downloadRefs.current[i]}
+        href={`${item.links.download}?force=true`}
+        download
+      >
+        <i className="ri-download-2-line ri-xl cart-download"></i>
+      </a>
     </div>
   );
 }
