@@ -31,8 +31,7 @@ function Cart() {
     atags.push(a);
   }
   console.log(cartItemUrl);
-  const downloadAllImg = e => {
-    e.preventDefault();
+  const downloadAllImg = () => {
     atags[0].click();
     atags[1].click();
     setButtonText("Downloading...");
