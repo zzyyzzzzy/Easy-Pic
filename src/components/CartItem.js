@@ -15,7 +15,13 @@ function CartItem({ item }) {
         onClick={() => removeFromCart(item.id)}
       ></i>
       <img src={item.urls.thumb} width="130px" />
-      <p>$5.99</p>
+      <a
+        ref={downloadRefs.current[i]}
+        href={`${item.links.download}?force=true`}
+        download
+      >
+        <i className="ri-download-2-line ri-xl cart-download"></i>
+      </a>
     </div>
   );
 }
