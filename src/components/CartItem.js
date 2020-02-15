@@ -1,12 +1,11 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext } from "react";
 import { Context } from "../Context";
 import PropTypes from "prop-types";
 import useHover from "../hooks/useHover";
 
-function CartItem({ item, downloadRefs, i }) {
+function CartItem({ item }) {
   const { removeFromCart } = useContext(Context);
   const [hovered, ref] = useHover();
-  const download = useRef(null);
 
   return (
     <div className="cart-item">
