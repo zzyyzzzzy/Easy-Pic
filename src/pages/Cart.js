@@ -30,7 +30,7 @@ function Cart() {
 
   return (
     <main className="cart-page">
-      <h1>Picture Cart</h1>
+      <h1>Pictures Cart</h1>
       {cartItemElements}
 
       <div className="order-button">
