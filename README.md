@@ -1,2 +1,2 @@
 ### Pic Some app
-An react application that allows a user to search his/her favorite pictures
+An react application that allows users to search and download royalty-free pictures they like.
