@@ -26,7 +26,7 @@ function Header() {
       <form onSubmit={handleOnSubmit}>
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Search Pictures..."
           className="searchTerm"
           onChange={handleOnChange}
           value={searchTerm}
