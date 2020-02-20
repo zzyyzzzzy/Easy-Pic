@@ -11,7 +11,6 @@ function Image({ className, img }) {
 
   const renderHeartIcon = () => {
     if (hovered) {
-      
       return (
         <i
           className={
@@ -56,13 +55,11 @@ function Image({ className, img }) {
   );
 }
 
-// Image.propTypes = {
-//   className: PropTypes.string,
-//   img: PropTypes.shape({
-//     id: PropTypes.string.isRequired,
-//     url: PropTypes.string.isRequired,
-//     isFavorite: PropTypes.bool
-//   })
-// };
+Image.propTypes = {
+  className: PropTypes.string,
+  img: PropTypes.shape({
+    id: PropTypes.string.isRequired
+  })
+};
 
 export default Image;
