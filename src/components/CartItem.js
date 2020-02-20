@@ -22,9 +22,9 @@ function CartItem({ item }) {
   );
 }
 
-// CartItem.propTypes = {
-//   item: PropTypes.shape({
-//     url: PropTypes.string.isRequired
-//   })
-// };
+CartItem.propTypes = {
+  item: PropTypes.shape({
+    url: PropTypes.shape({ thumb: PropTypes.string.isRequired })
+  })
+};
 export default CartItem;
